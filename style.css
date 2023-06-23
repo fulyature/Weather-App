@@ -1,20 +1,20 @@
 html {
   font-size: 62.5%;
+  height: 100vh;
 }
 body {
   text-align: center;
-  margin-top: 50px;
-  height: 94.5vh;
-  background: rgb(255, 255, 255);
-  background: linear-gradient(
-    207deg,
-    rgba(255, 255, 255, 1) 7%,
-    rgba(92, 190, 191, 1) 100%
-  );
+  height: 100vh;
+  background: linear-gradient(135deg, #00feba, #5b548a);
+
   /* background-position: center;
        background-repeat: no-repeat;
        background-size: cover;
          */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .card-form {
   background: linear-gradient(135deg, #00feba, #5b548a);
@@ -25,6 +25,13 @@ body {
   /* height: 15rem; */
   font-size: 2rem;
   padding: 5rem;
+  min-height: 50vh;
+  height: auto;
+}
+h2 {
+  color: white;
+  font-size: 4rem;
+  font-weight: 700;
 }
 
 #input-alani {
@@ -81,12 +88,15 @@ body {
 .card-img-top {
   width: 40%;
 }
-.icon-img {
-  width: 90% !important;
-}
+
 @media only screen and (max-width: 1200px) {
 }
 @media only screen and (max-width: 600px) {
 }
 @media only screen and (max-width: 425px) {
+  .card-form {
+    width: 100%;
+    padding: 0;
+    height: 100%;
+  }
 }
