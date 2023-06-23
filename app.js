@@ -48,18 +48,19 @@ const weatherDataDom = (x) => {
     name,
     sys: { country },
     main: { temp, feels_like, humidity },
-    weather: [{ main, description }],
+    weather: [{ main, description, icon }],
     wind: { speed },
   } = x;
+  console.log(x);
 
   //console.log(x.weather[0].main); //destructiring yapmasaydım bu şekilde yapabılırıdk
 
   //DOMA YAZDIR;
   const container = document.querySelector(".container");
   container.innerHTML = `
-  <div class="card p-4 text-center " style="width: 18rem;">
+  <div class="card  w-75 mb-3 ">
   <!--* Resim Alanı -->
-  <img src="" class="card-img-top mx-auto icon-img" alt="...">
+  <img src="https://openweathermap.org/img/wn/${icon}@2x.png" class="card-img-top mx-auto icon-img" alt="...">
   <!--* Şehir-Ulke-Alani -->
   <div class="card-body">
     <h2 class="card-title " id="şehir-adi">${name} </h2><span class="ülke" id="ülke">${country}</span>
@@ -67,7 +68,7 @@ const weatherDataDom = (x) => {
   <ul class="list-group list-group-flush h3">
     <li class="list-group-item ">
         <div class="div">
-              <p class="hava-durumu-derece"> <span id="derece" class="h1">${temp} </span></p> <i class="fa-regular fa-circle"></i>  <i class="fa-solid fa-c"></i>
+              <p class="hava-durumu-derece"> <span id="derece" class="h1">${temp} </span></p> &#8451;
        </div>
     </li>
     <li class="list-group-item">
@@ -77,7 +78,7 @@ const weatherDataDom = (x) => {
   </li>
     <li class="list-group-item">
         <div class="div">
-              <p class="hava-durumu-derece"> <span id="hissedilen-derece" class="h1"> ${description} </span></p> <i class="fa-regular fa-circle"></i>  <i class="fa-solid fa-c"></i>
+              <p class="hava-durumu-derece"> <span id="hissedilen-derece" class="h1"> ${description} </span></p> &#8451;
        </div>
     </li>
   </ul>
@@ -103,7 +104,5 @@ const weatherDataDom = (x) => {
   
   </div>
   
-  </div>
-​
-  `;
+  </div>`;
 };
